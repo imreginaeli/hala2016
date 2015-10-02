@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlIndex">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="img/logo.jpg">
+    <title>Hala 2016</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/default.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style>
+		#wrapper{
+			background: linear-gradient(#275670, #122B41);
+			background: -moz-linear-gradient(#275670, #122B41);
+			background: -webkit-linear-gradient(#275670, #122B41);
+			background: -o-linear-gradient(#275670, #122B41);
+			background: -ms-linear-gradient(#275670, #122B41);
+			height:100%;
+		    width: 100%;
+		    margin: 0;
+		    padding: 0;
+		    border: 0;
+		}
+		#wrapper td {
+		   vertical-align: middle;
+		   text-align: center;
+		}
+	</style>
+	<script>
+		function newpage() {
+			window.location = newLocation;
+		}
+	
+		function countdown(secs) {
+			if (secs == 5){
+				clearTimeout(timer);
+				if(localStorage.getItem("fbname")!==null)
+				{
+					newLocation = 'home.html';
+					$('body').fadeOut(500, newpage);
+				}
+				else
+				{	
+					window.location = "login.html";
+				}
+			}
+				secs--;
+				var timer = setTimeout('countdown('+secs+')', 1000);
+			}
+				
+		window.addEventListener("load", countdown(10), false);
+		
+	</script>
+  </head>
+
+ <body id="bodyIndex">
+	<table id="wrapper">
+		<tr>
+			<td><img src="img/logo.jpg" alt="" / style="width: 25%;"></td>
+		</tr>
+	</table>
+  </body>
+</html>
